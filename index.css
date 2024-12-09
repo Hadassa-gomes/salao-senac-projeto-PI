@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa; /* Cor de fundo leve */
+    
 }
 
 .navbar {
@@ -112,7 +113,16 @@ body {
   }
 
 
-
+  .title-container {
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    align-items: center;     /* Alinha o conteúdo verticalmente */
+    margin-bottom: 20px;     /* Espaço abaixo do título */
+  }
+  
+  h2 {
+    text-align: center; /* Certifica que o texto dentro de h2 também está centralizado */
+  }
 
 
 .cards-container {
