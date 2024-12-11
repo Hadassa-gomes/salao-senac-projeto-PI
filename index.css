@@ -4,6 +4,39 @@ body {
     
 }
 
+.accordion-button {
+  background-color: #2A6D9F; /* Cor de fundo dos botões */
+  color: white; /* Cor do texto do botão */
+}
+
+
+
+
+
+/* Espaçamento das seções principais */
+.intro-section, .cards-container, .comments-section, .services-footer {
+  margin-bottom: 40px; /* Adiciona espaço abaixo de cada seção */
+}
+
+/* Espaçamento adicional nas seções específicas */
+.cards-container {
+  margin-top: 40px; /* Adiciona espaço acima da seção de cards */
+}
+
+.comments-section {
+  margin-top: 40px; /* Adiciona espaço acima da seção de comentários */
+}
+
+.services-footer {
+  margin-top: 40px; /* Adiciona espaço acima da seção de serviços no rodapé */
+}
+
+/* Espaçamento superior nas seções principais */
+.intro-section, .carousel {
+  margin-top: 40px; /* Adiciona espaço no topo */
+}
+
+
 .navbar {
     background-color: #E99420 !important; /* Forçar a cor da navbar */
     width: auto;
@@ -36,7 +69,7 @@ body {
 }
 
 .carousel {
-    margin: 20px 0; /* Margem acima e abaixo do carrossel */
+    margin: 0; /* Margem acima e abaixo do carrossel */
 }
 
 .image-container {
@@ -122,6 +155,7 @@ body {
   
   h2 {
     text-align: center; /* Certifica que o texto dentro de h2 também está centralizado */
+    
   }
 
 
@@ -157,7 +191,7 @@ body {
     font-size: 1.5rem;
     color: #fff;
     padding: 15px 10px;
-    background-color: #1E498E; 
+    background-color: #2A6D9F; 
   }
 
 
