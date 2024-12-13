@@ -8,58 +8,115 @@
     <title>Salão Escola Senac</title>
 </head>
 
+
+<style>
+  /* Estilo do botão sanduíche */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Menu dropdown */
+  .custom-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .custom-dropdown a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .custom-dropdown a:last-child {
+    border-bottom: none;
+  }
+
+  .custom-dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Estado ativo do menu */
+  .custom-dropdown.active {
+    display: flex;
+  }
+</style>
+</head>
 <body>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="/imagens/logo senac.png" alt="Logo do Salão" width="50" height="40" class="d-inline-block align-text-top">
-        Salão Senac</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/imagens/logo senac.png" alt="Logo do Salão" width="50" height="40" class="d-inline-block align-text-top">
+     
+    </a>
+
+    <div class="navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="agendamento.html">Agendamento</a>
+      <a href="#">Serviços</a>
+      <a href="disponibilidade.html">Disponibilidade</a>
+    </div>
+
+    <div id="custom-menu" class="ms-auto">
+      <!-- Botão hambúrguer -->
+      <button class="hamburger" id="hamburger-button">
+        <div></div>
+        <div></div>
+        <div></div>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="agendamento.html">Agendamento</a> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="disponibilidade.html">Disponibilidade</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li> -->
-        </ul>
-        <!-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
-        
-          <div id="icon" class="text-end">
-            <a href="login.html" class="btn btn-primary">Login</a>
-            
-                  
-          </div>
-      
+      <!-- Menu Dropdown -->
+      <div class="custom-dropdown" id="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="agendamento.html">Agendamento</a>
+        <a href="#">Serviços</a>
+        <a href="disponibilidade.html">Disponibilidade</a>
+        <a href="login.html">Login</a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<script>
+  // Controle do menu sanduíche
+  const hamburgerButton = document.getElementById('hamburger-button');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  hamburgerButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // Fechar o menu ao clicar fora dele
+  document.addEventListener('click', (event) => {
+    if (!dropdownMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+</script>
+
 <!-- carousel -->
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
