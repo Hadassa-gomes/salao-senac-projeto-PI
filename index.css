@@ -4,12 +4,25 @@ body {
     
 }
 
+ 
+
+.carousel-item {
+  background: url('/imagens/cabelereira\ senac.jpg') no-repeat center center;
+  background-size: cover; /* Mostra toda a imagem */
+  background-position: top;
+  width: 100%;
+  height: 500px; /* Altura do carrossel */
+}
+
+
+
+
+
+
 .accordion-button {
   background-color: #2A6D9F; /* Cor de fundo dos botões */
   color: white; /* Cor do texto do botão */
 }
-
-
 
 
 
