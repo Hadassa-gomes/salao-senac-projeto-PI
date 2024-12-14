@@ -20,8 +20,8 @@ body {
 
 
 .accordion-button {
-  background-color: #2A6D9F; /* Cor de fundo dos botões */
-  color: white; /* Cor do texto do botão */
+  background-color: #2A6D9F; 
+  color: white; 
 }
 
 
@@ -31,55 +31,59 @@ body {
   margin-bottom: 40px; /* Adiciona espaço abaixo de cada seção */
 }
 
-/* Espaçamento adicional nas seções específicas */
+
 .cards-container {
-  margin-top: 40px; /* Adiciona espaço acima da seção de cards */
+  margin-top: 40px; 
 }
 
 .comments-section {
-  margin-top: 40px; /* Adiciona espaço acima da seção de comentários */
+  margin-top: 40px; 
 }
 
 .services-footer {
-  margin-top: 40px; /* Adiciona espaço acima da seção de serviços no rodapé */
+  margin-top: 40px; 
 }
 
-/* Espaçamento superior nas seções principais */
+
 .intro-section, .carousel {
-  margin-top: 40px; /* Adiciona espaço no topo */
+  margin-top: 40px; 
 }
 
 
 .navbar {
-    background-color: #E99420 !important; /* Forçar a cor da navbar */
+    background-color: #E99420 !important; 
     width: auto;
-    height: 5em;
+    
     margin: auto;
+    align-items: center;
+    justify-content: space-between;
+  padding: 10px 20px;
+  display: flex;
 }
 
-.navbar-brand {
-    color: #ffffff; /* Cor do texto da marca */
+.navbar-menu {
+  display: flex;
+  gap: 15px;
 }
 
-.navbar-nav .nav-link {
-    color: #ffffff; /* Cor dos links */
+.navbar-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s; /* Efeito suave ao passar o mouse */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #285AAA; /* Cor do texto ao passar o mouse */
+.navbar-menu a:hover {
+  color: #007bff; /* Cor ao passar o mouse */
 }
 
-.dropdown-menu {
-    background-color: #285AAA; /* Cor de fundo do dropdown */
-}
-
-.dropdown-item {
-    color: #285AAA; /* Cor dos itens do dropdown */
+/* .dropdown-item {
+    color: #285AAA;
 }
 
 .dropdown-item:hover {
-    background-color: #285AAA; /* Cor ao passar o mouse no dropdown */
-}
+    background-color: #285AAA; 
+} */
 
 .carousel {
     margin: 0; /* Margem acima e abaixo do carrossel */
