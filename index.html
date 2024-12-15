@@ -118,27 +118,89 @@
 </script>
 
 <!-- carousel -->
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="" class="d-block w-100" alt="...">
-    </div>
+<style>
+  .carousel {
+      width: 100%;
+      height: 600px; 
+      margin: auto;
+      overflow: hidden;
+      
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+  }
+  .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+  .carousel-images img {
+      width: 100%;
+      height: 100%; /* Ajusta a altura da imagem para caber no carrossel */
+      object-fit: cover; /* Mantém a proporção da imagem */
+     
+  }
+  .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+  .carousel-buttons button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      opacity: 0.7;
+  }
+  .carousel-buttons button:hover {
+      opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div class="carousel">
+  <div class="carousel-images">
+      <img src="/imagens/cabelereira senac.jpg" alt="Imagem 1">
+      <img src="/imagens/funcionarias senac.jpg" alt="Imagem 2">
+      <img src="/imagens/FA04481.jpg" alt="Imagem 3">
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div class="carousel-buttons">
+      <button onclick="prevSlide()">&#8592;</button>
+      <button onclick="nextSlide()">&#8594;</button>
+  </div>
 </div>
+
+<script>
+  let currentIndex = 0;
+
+  function showSlide(index) {
+      const slides = document.querySelectorAll('.carousel-images img');
+      const totalSlides = slides.length;
+      if (index >= totalSlides) {
+          currentIndex = 0;
+      } else if (index < 0) {
+          currentIndex = totalSlides - 1;
+      } else {
+          currentIndex = index;
+      }
+      const offset = -currentIndex * 100;
+      document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+  }
+
+  function nextSlide() {
+      showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+      showSlide(currentIndex - 1);
+  }
+
+  // Inicializa o carrossel
+  showSlide(currentIndex);
+</script>
 <!-- Textos -->
 <section class="intro-section">
     <div class="text-area">
